@@ -52,15 +52,20 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="process_login.php" method="post">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="txtUser"><i class="fas fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="username" >
+                                <input type="text" class="form-control" placeholder="username" name="user">
                             </div>
+                            <?php
+                                if(isset($_GET['error'])){
+                                    echo"<p style='color:red'>{$_GET['error']}Sai tên tài khoản hoặc mật khẩu!</p>";
+                                }
+                            ?>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="txtPass"><i class="fas fa-key"></i></span>
-                                <input type="text" class="form-control" placeholder="password" >
+                                <input type="password" class="form-control" placeholder="password" name="pass">
                             </div>
                             
                             <div class="row align-items-center remember">
